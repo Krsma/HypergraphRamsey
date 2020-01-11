@@ -1,0 +1,16 @@
+
+Ch 1	Uvod	
+	1.1 Uvod u Grafove/Hiper grafove
+	1.2 Uvod u Remzijevu teoriju (obicni, dirihle)
+	1.3 Remzijeva teorija nad grafovima
+
+Ch 2	Dokaz Teoreme
+	2.1 Remzi nad Hipergrafovima - problem statment
+	2.2 Remzi nad bihromatskim hipergrafovima - dokaz
+	2.3 Remzi nad polihromatskim hipergrafovima - dokaz
+
+Ch 3	Posledice i otvornei problemi
+	3.1	Happy Ending teorema
+	3.2 	?Druge posledice/primeri upotrebe?
+	3.3	?Primena Remzijeve na neuniformne hipergrafove?
+
