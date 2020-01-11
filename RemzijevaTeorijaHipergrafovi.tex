@@ -1,8 +1,123 @@
 \documentclass[a4paper]{article}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{amsmath}
 
+\newcommand{\autor}{ \centering Nenad Vuletić, Vladimir Krsmanović, Marko Polić}
+\newcommand{\naslov}{Remzijeva teorija na hipergrafovima}
+\newcommand{\datum}{Novi Sad, 2020}
+\newcommand{\mentor}{dr. Maja Peh}
 \begin{document}
-	Privremenei tekst
+	\begin{center}
+		
+		\includegraphics[width=2cm]{grbPMF}\hfill
+		\parbox[b]{45ex}{\centering 
+			Univerzitet u Novom Sadu\\
+			Prirodno-matematički fakultet\\
+			Departman za matematiku i informatiku}\hfill 
+		\includegraphics[width=2cm]{grbUNS}
+		
+		\vspace{22ex}
+				
+		{\Huge {\bf \setlength{\baselineskip}{1.5\baselineskip}\naslov}}
+		
+		\vspace{4ex}
+		Seminarski rad
+		
+		\vspace{12ex}
+		\parbox[b]{\textwidth}{{\Large {\bf \hspace{1cm}\autor}}}
+		\vspace{10ex}
+		
+		{\Large Mentor:}
+		
+		{\Large  \textbf{\mentor}}
+		
+		\vfill
+		
+		\datum
+		
+	\end{center}
+	\thispagestyle{empty}
+	\newpage
+	
+	\tableofcontents
+	\newpage
+	\section{Uvod}
+	Ubaciti Polićev tekst
+	\section{Postavka i dokaz Remzijeve teorije za hipergrafovima}
+	\subsection{Postavka problema}
+	\subsection{Dokaz Remzijeve teoreme za hipergrafove}
+	U ovom poglavlju dokazujemo Remzijevu teoriju %preformulisati 
+	za hipergraf $ G_{k}(V, E)$ gde je V skup čvoreva, a E je skup skupova k-tog stepena čiji su elementi čvorovi iz skupa V.
+	
+	\noindent Treba da pokažemo $m_{3} + 1 \rightarrow (L_1, L_2)^k$. 
+	Matematičkom indukcijom dokazujemo:
+	\begin{equation}
+		m_{3} + 1 \rightarrow (L_1, L_2)^k		
+	\end{equation}
+	\begin{description}
+		\item \textbf{Indukcijska baza} \\
+		Radimo indukciju nad elementom k, i iz Remzijeve teoreme za obične grafove (gde je k = 2), dobijamo indukcijsku bazu. 
+		\item \textbf{Indukcijska hipoteza}\\
+		Iz indukcijske hipoteze dobijamo da važi
+		\begin{equation}\label{m1}
+		m_{1} \rightarrow (L_1 - 1, L_2)^k		
+		\end{equation}
+		\begin{equation}\label{m2}
+		m_{2} \rightarrow (L_1, L_2 -1)^k		
+		\end{equation}
+		\begin{equation}\label{m3}
+		m_{3} \rightarrow (L_1, L_2)^{k-1}		
+		\end{equation}
+		\item \textbf{Indukcijski korak}\\	
+		Konstruišimo prvo k-uniformni hipergraf P sa $n = m_3 + 1$ čvorova. Nad tim hipergrafom je definisano bojenje $\chi$ takvo da boji sve k-elementne hipergrane hipergrafa P ili u boju 1 ili u boju 2.\begin{equation}
+			\chi : [ \underline{n} ]^k  \rightarrow \underline{2}
+		\end{equation} \\
+		Bez umanjenja opštosti onda možemo uočiti proizvoljan čvor a unutar skupa čvoreva hipergrafa P, i onda možemo uočiti hipergraf $P^\prime$ čiji je skup čvorova $[\underline{n} \textbackslash \{ a \}]$, i njegova kardinalnost je stepena $m_3$. Po posledici \ref{m3} znamo da postoji k-1 uniformni hipergraf sa $m_3$ čvorova. %preformulisati
+		\\
+		Na njemu onda definišemo bojenje $\overline{\chi}$ takvo da boji hipergrane stepena k-1 hipergrafa $P^\prime \textbackslash \{ a \}$ u istu boju kao što ih boji  $\chi$ u $P^\prime$ dok je imalo a.
+		\begin{equation}
+			\overline{\chi} : [ \underline{n} \textbackslash \{a\} ]^{k-1}  \rightarrow \underline{2}
+		\end{equation} %preforumilasti
+		Takodje definišemo preslikavanje M koje uzima sve hipergrane koje su imale a, i boji ih u istu boju kao $\chi$ dok su imale a.
+		\begin{equation}
+			M \rightarrow \chi (M \cup \{a\})
+		\end{equation}
+		\\
+		Iz posledice \ref{m3} takodje sledi da postoji $m_1$ čvorova gde sve k-1 elementne hipergrane nad njima su obojene bojom 1 (po bojenju $\overline{\chi}$)
+		Taj podskup čvorova nazivamo $K_1$, i njegova kardinalnost je  $m_1$. \footnote{Postupak je analogan za grane obojene bojom 2, gde nastaje podskup $K_2$. Analogni postupak je ispisan u appendixu}. \\
+		Posmatrajmo sada ponovo bojenje $\chi$. Konstruišimo sada restrikciju $\chi$ nad  skupom čvoreva $K_1$.
+		\begin{equation}
+			\chi_1 : [ K_1 ]^k  \rightarrow \underline{2}
+		\end{equation}\\
+		Iz posledice \ref{m1} sledi da na hipergrafu koji sadrži $m_1$ čvorova postoji skup k-elementnih hipergrana obojenih bojom 1. Neka skup koji sadrži te grane bude $T_1$, i po posledici \ref{m1} znamo da je njegova kardinalnost jednaka sa $L_1 - 1$. Analgonim postupkom dolazimo do  skupa k-elementnih hipergrana boje 2 koji ćemo obeležiti sa $T_2$, i njegova kardinalnost (ponovo po posledici \ref{m1}) je jednaka $L_2$. \\
+		Skupu $T_1$ sada možemo pridružiti čvor a, i tim proširenjem ponovo posmatramo k-elementne hipergrane nad novim skupom čvorova $T = T_1 \cup \{a\}$.\\
+		Posmatrajmo sada sve (k-elementne) grane tog skupa.\\
+		One mogu ili da 
+		\begin{enumerate}
+			\item \textbf{Sadrže a}\\
+				U tom slučaju se onda sve te grane boje isto kao što ih boji $\overline{\chi}$ kada ne bi imale čvor a. Pošto $\overline{\chi}$ boji sve k-1 elementne hipergrane $K_1$ u boju 1 . A pošto je $T_1$ podskup, onda dobijamo da 
+				\begin{equation}
+					[ T_1 ]^{k-1} \subseteq \chi^\prime (1)
+				\end{equation}
+				Potom možemo uključiti čvor a, i bojenje $\chi$ će ih isto bojiti u boju 1.
+				\begin{equation}
+					[ T_1 \cup \{a\} ]^{k} \subseteq \chi^\prime (1)
+				\end{equation}
+				Odatle dolazimo do zaključka 
+				\begin{equation}
+					[ T ]^{1} \subseteq \chi^\prime (1)
+				\end{equation}
+			\item  \textbf{Ne sadrže a} \\
+				Onda sve k-elementne hipergrane$T_1$ su već boje 1, time direktno dobijamo
+				\begin{equation}
+					[ T ]^k \subseteq \chi^\prime (1)
+				\end{equation}
+		\end{enumerate}
+		Ovime smo pokazali da se sve k-elementne hipergrane iz T boje bojom 1. Time zaključujemo da postoji potpun podhiperhgraf koji sadrži $L_1$ čvorova, i da su sve njegove hipergrane obojene bojom 1. Time ispunjavamo uslov za $L_1$ iz početne pretpostavke $m_3 + 1 \rightarrow (L_1, L_2)^k$.\footnote{Analognim postpukom za $K_2$ ispunjavamo uslov uz $L_2$. Analogni postpuak je ispisan u appendixu}\\
+		{\large Q.E.D.}
+	\end{description}
 \end{document}
