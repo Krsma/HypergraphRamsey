@@ -5,6 +5,8 @@
 \usepackage{hyperref}
 \usepackage{lmodern}
 \usepackage{amsmath}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{citiranja.bib}
 
 \newcommand{\autor}{ \centering Nenad Vuletić, Vladimir Krsmanović, Marko Polić}
 \newcommand{\naslov}{Remzijeva teorija na hipergrafovima}
@@ -120,4 +122,20 @@
 		Ovime smo pokazali da se sve k-elementne hipergrane iz T boje bojom 1. Time zaključujemo da postoji potpun podhiperhgraf koji sadrži $L_1$ čvorova, i da su sve njegove hipergrane obojene bojom 1. Time ispunjavamo uslov za $L_1$ iz početne pretpostavke $m_3 + 1 \rightarrow (L_1, L_2)^k$.\footnote{Analognim postpukom za $K_2$ ispunjavamo uslov uz $L_2$. Analogni postpuak je ispisan u appendixu}\\
 		{\large Q.E.D.}
 	\end{description}
+	\subsection{Dokaz Remzijeve teoreme za polihromatske hipergrafove}
+	\section{Pregled stanja Remzijeve teorije nad hipergrafovima}
+	Pošto su i polja grafova i Remzijeve teorije oba poprilično mlada, posebno u poredjenju sa ustaljenijim matematičkim disciplinama, još uvek je slabo istražena. I to posebno u poljima hipergrafova.\\ Većina radova na ovom polju se bavi primarno sa uniformnim hipergrafovima, upravo zbog kompleksnosti rada se neunifomrnim hipergrafovima.\\ Kao posledica težine izučavajna Remzijeve teorije, matematičari su pribegli generelizacijama problema i kompjuteskim simulacijama. Iako su oba van osnovne teme ovog rada, o kompjuteskim simulacijama i jedinom poznatom remzijevom broju za hipergrafove ćemo diskutovati u sledećem poglavlju, dok ćemo o generelizacijama problema pričati u kasnijem poglavlju (Gallai - Remzijevim bojenjima).
+	\subsection{Poznati remzijev broj za hipergrafove}%opraviti citiranja%
+	Trenutno jedini poznati remzijev broj za hipergrafove (u klasičnom smislu, posmatrajući potpune indukovane podhipergrafove)\cite{pregled}%proveriti i citirati
+	 je dobijen uz pomoć računara. Brendan D. McKay i Stanislaw P. Radziszowski, su 1991 godine objavili svoj rad \textcite{HGremzibroj} gde su odredili broj tačaka potreban da se bihromatskim bojenje trouglova nad skupom od 13 tačaka mora uvek mora pronaći monohromatski četvorougao.%preformulisati
+	\begin{equation}
+		R(4, 4; 3) = 13
+	\end{equation}
+	Na osnovu već poznatih granica ($R(4, 4; 3) \leq 15$ Giraud))%citiraj Girauda, ima link u HGrezmi radu, 
+	, kao i veze izmedju Tur\'{a}novih sistema\footnote{Donekle slični remzijevim brojevima, Tur\'{a}novi brojevi predstavljaju minimalni broj grana koje  ispunjavaju uslov da onda za bilo koji podskup čvoreva tog hipergrafa uvek sadrži bar jendu granu. Ali pošto je to van opsega ovog rada, nećemo ulaziti dublje u teoriju Tur\'{a}novih sistema } i Remzijevih brojeva, McKay i Radziszovski su uspeli prvo da spuste granicu na $R(4, 4; 3) \leq 13$, a onda i da pomoću kompjutera pronadju taj graf, kroz proces u kojem su generisali preko 200,000 grafova. Ovaj problem možemo loako posmatrati kroz prizmu hipergrafova (slično kao i kod Erd\"{o}s-Szekeres problema), gde tražimo koliko je potrebno čvorova za 3-uniformni hipergraf tako da on uvek ima ili potpun podhipergraf indukovan sa 4 čvora, ili 4  nezavisna čvora. %citirati!! citirati i preformulisati footnote kod Tur\'{a}novih bsistema, i citirati !!! potencijalno ubaciti sliku tog grafa
+	
+	\subsection{Remzijeva teorija nad stablima}
+	\subsection{Gallai-Remzi brojevi}
+	\section{Bibliografija}	
+	\printbibliography
 \end{document}
