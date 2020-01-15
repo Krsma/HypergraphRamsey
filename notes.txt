@@ -10,7 +10,12 @@ Ch 2	Dokaz Teoreme
 	2.3 Remzi nad polihromatskim hipergrafovima - dokaz
 
 Ch 3	Posledice i otvornei problemi
-	3.1	Happy Ending teorema
-	3.2 	?Druge posledice/primeri upotrebe?
-	3.3	?Primena Remzijeve na neuniformne hipergrafove?
+	3.1 	Jedini poznati klasični remzijev broj za hipergrafove
+	3.2	Happy Ending teorema
+	3.3 	Remzijeva teorema nad stablima
+	3.4 	Remzijeva teorema nad putevima hipergrafa
+	3.5	Problemi kod neuniformnih hipergrafova i resenja
+		3.5.1	Oslabljenja Remzijeva teorema
+		3.5.2	Gallai-Remzi brojevi	
+
 
