@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage{lmodern}
 \usepackage{amsmath}
+\usepackage{interval}
 \usepackage[backend=biber]{biblatex}
 \addbibresource{citiranja.bib}
 
@@ -43,8 +44,14 @@
 		
 	\end{center}
 	\thispagestyle{empty}
-	\newpage
-	
+	\newpage	
+	\vfill
+	\begin{center}
+		\textbf{Abstrakt}\\
+		U ovom radu ćemo napraviti pregled Remzijeve teorije nad hipergrafovima, predstavićemo dokaze i primene ove matematičke teorije.
+		\thispagestyle{empty}
+	\end{center}
+	\pagebreak
 	\tableofcontents
 	\newpage
 	\section{Uvod}
@@ -57,7 +64,7 @@
 	
 	\noindent Treba da pokažemo $m_{3} + 1 \rightarrow (L_1, L_2)^k$. 
 	Matematičkom indukcijom dokazujemo:
-	\begin{equation}
+	\begin{equation}\label{OsnovnaRemzijeva}
 		m_{3} + 1 \rightarrow (L_1, L_2)^k		
 	\end{equation}
 	\begin{description}
@@ -123,6 +130,42 @@
 		{\large Q.E.D.}
 	\end{description}
 	\subsection{Dokaz Remzijeve teoreme za polihromatske hipergrafove}
+	Pokažimo sada Remzijevu teoremu za hipergrafove gde imamo neki konačan, r broj boja. Treba da pokažemo da važi 
+	\begin{equation}
+		n \rightarrow (l_1, l_2 \dots l_r)^k
+	\end{equation}
+	Da bi ovo dokazali, koristićemo postupak matematičke indukcije, oslanjajući se na prethodno pokazano tvrdjenje \ref{OsnovnaRemzijeva} koja će nam predstavljati bazu naše indukcije.
+	\begin{description}
+		\item \textbf{Indukcijska baza} \\
+		Tvrdjenje \ref{OsnovnaRemzijeva} nam predstavlja indukcijsku pozu, pokazujući da naša teorema važi za slučaj r = 2.\\
+		\item \textbf{Indukcijska hipoteza}\\
+		Prateći postupak matematičke indukcije, pretpostavićemo da naše tvrdjenje važi za neko proizvoljno r.\\
+		\item \textbf{Indukcijski korak}\\
+		Pokažimo sada da će naša teorema važiti za r +1 boju.
+		Pokazujemo da postoji konačan broj čvorova n za koji će svako bojenje nad tim hipergrafom bojiti boju i nad $l_i$ grana. %preforumilasti formalno
+		\begin{equation}\label{Ikorak}
+		 n \rightarrow (l_1, l_2 \dots l_r, l_{r+1})^k
+		\end{equation}
+		Posmatrajmo prvo bojenje iz Indukcijske hipoteze, gde znamo da postoji broj čvorova dovoljan za bojenje hipergrafa sa nekih r boja. Uymimo da je taj dovoljan broj neko m. Postojanje konačne vrednosti ovog broja znamo kao posledicu naše pretpostavke iz \textbf{Indukcijske hipoteze}\\
+		Konstruišimo sada novu brojčanu vrednost n, koja prestavlja broj čvorova dovoljan za bihromatsko bojenje  nad nekim hipergrafom tako da ono ili boji m (broj dobijen iz prethdonog koraka) hipergrana nekom bojom A ili da boji $l_{r+1}$ hipergrana bojom r+1. Postojanje konačne vrednosti ovog broja dobijamo iz \textbf{Inudkcijske baze}. 
+		\\
+		Konstruišimo sada novi graf G koji će imati n čvorova i nad kojim ćemo posmatrati 2 bojenja. Pošto pokazujemo Indukcijski korak naše hipoteze , posmatraćemo bojenje $\chi$ i da bi pokazali konačnost indukcijskog koraka (\ref{Ikorak}) mi zapravo treba da poažemo egzistenciju ovakvog bojenja.
+		\begin{equation}\label{pokazujemo}
+		\chi : [\underline{n}]^k \rightarrow r+1
+		\end{equation}
+		Da bi važila Remzijeva teorema za polihromatske hipergrafove, treba da pokažemo da će za bilo koje bojenje nekom bojom i postojati potpuni podhipergraf čije su sve grane obojene bojom $l_i$ (za i koje pripada od 1 do $l_{r+1}$) %lepši ispis sa paketom interval
+		Konstruišimo sada novo bojenje 
+		\begin{equation}
+			\overline{\chi} : [\underline{n}]^k \rightarrow \{A, r+1\}
+		\end{equation}
+		Ovo bojenje  boji grane grafa G u odnosu na to kojom bojom je ta grana obojena u bojenju $\chi$. Ako je neka grana u G bojenjem $\chi$ obojenja bojom r+1, onda i tu granu u bojenju $\overline{\chi}$ bojimo bojom r+1. U suprotnom ako je ta grana u bojenju $\chi$ bojena nekom drugom bojom (od 1 do r) onda tu granu bojimo bojom A.\\
+		Posmatrajmo sada ponovo bojenje \ref{pokazujemo}.\\
+		Pokazujemo da uvek možemo naći potpun podhipergraf boje i i kardinalnosti $l_i$.
+		Ukoliko bojenje $\overline{\chi}$ boji bar $l_{r+1}$ grane u boju r+1 onda direktno imamo ispunjenje potrebnog uslova.
+		\\
+		U suprotnom slučaju, imamo da bojenje $\overline{\chi}$ boji bar m čvorova boje A. Na osnovu našeg indukcijskog koraka znamo da broj m predstavlja Remzijev broj za bojenje r boja. A pošto ovaj podhipergraf koji posmatramo ne može da sadrži boju r+1 (po smaoj konstrukciji bojenja $\overline{\chi}$), znamo da unutar ovih m čvorova postoje grane najviše r različitih boja. Time, pošto je m Remzijev broj za r boja, znamo da će se u ovom podhipergrafu pojaviti nekim potpuni podhipergraf obojen jednom bojom potrebne kardinalnosti. Time smo pokazali da postoji Remzijev broj za svako remzijeve bojenje nad proizvoljnim konačnim borojem boja. \\
+		Q.E.D.
+ 	\end{description}
 	\section{Pregled stanja Remzijeve teorije nad hipergrafovima}
 	Pošto su i polja grafova i Remzijeve teorije oba poprilično mlada, posebno u poredjenju sa ustaljenijim matematičkim disciplinama, još uvek je slabo istražena. I to posebno u poljima hipergrafova.\\ Većina radova na ovom polju se bavi primarno sa uniformnim hipergrafovima, upravo zbog kompleksnosti rada se neunifomrnim hipergrafovima.\\ Kao posledica težine izučavajna Remzijeve teorije, matematičari su pribegli generelizacijama problema i kompjuteskim simulacijama. Iako su oba van osnovne teme ovog rada, o kompjuteskim simulacijama i jedinom poznatom remzijevom broju za hipergrafove ćemo diskutovati u sledećem poglavlju, dok ćemo o generelizacijama problema pričati u kasnijem poglavlju (Gallai - Remzijevim bojenjima).
 	\subsection{Poznati remzijev broj za hipergrafove}%opraviti citiranja%
@@ -139,9 +182,13 @@
 	\begin{equation}
 		2^n \not\rightarrow (2l + k - 4)^{k-1}
 	\end{equation}
+	To nam omogućuje da poznajući samo jedan remzijev broj odmah znatno sužimo polje pretrage drugi remzijevih brojeva.
 	\subsection{Remzijeva teorija nad stablima}
-	\subsection{Gallai-Remzi brojevi}
-	
+	izbaciti?
+	\subsection{Remzijeva teorija nad neuniformnim hipergrafovima}
+	\subsubsection{Problemi}
+	Kako su i sama polja grafova i Remzijeve teorije poprilično mlada, tako su mlada i izučavanja Remzijeve teorije nad hipergrafovima. A istraživanja nad ne unifomrnim hipergrafovima su još uvek pokrivena u plaštu tame, i ostaju manje više neistražena. \\
+	Jedan od razloga manjka interesovanje je samo pitanje validnosti remzijeve teorije nad neunifomnim hipergrafovima %citiraj email lika
 	\section{Bibliografija}	
 	\printbibliography
 \end{document}
