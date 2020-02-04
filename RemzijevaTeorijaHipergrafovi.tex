@@ -12,7 +12,7 @@
 \newcommand{\autor}{ \centering Nenad Vuletić, Vladimir Krsmanović, Marko Polić}
 \newcommand{\naslov}{Remzijeva teorija na hipergrafovima}
 \newcommand{\datum}{Novi Sad, 2020}
-\newcommand{\mentor}{dr. Maja Peh}
+\newcommand{\mentor}{dr. Maja Pech}
 \begin{document}
 	\begin{center}
 		
@@ -56,8 +56,12 @@
 	\newpage
 	\section{Uvod}
 	Ubaciti Polićev tekst
+	FOrmulacija Remzijeve teorije za hipergrafove je veoma slična onoj za obične grafove (sama posledica toga da obične grafove možemo posmatati kao hipergrafove red 2), tako da se i većina pojmova koji su poznati iz teorije grafova mogu koristiti i u istraživanju nad hipergrafovima.
 	\section{Postavka i dokaz Remzijeve teorije za hipergrafovima}
 	\subsection{Postavka problema}
+	Notaciju za Remzijeve brojeve, bojenja i drugu notaciju kojom ćemo se baviti u ovom poglavlju možemo gledati iz nekolik ugolova. Iako se sama operacija bojenja vrši nad granama, možemo napraviti nekoliko apstrakcija zarad lakšeg razumevanja.\\
+	Kao prvo možemo omdah uočiti da se bavimo isključivo uniformnim i potpunim hipergrafovima. Remzijeva teorija nad neuuniformnim hipergrafovima predstavlja poseban problem, koji je još uvek minimalno istražen i za koji još uvek nismo sigurni da li uopšte važi. O ovome ćemo diskutovati u kasnijem poglavlju \ref{neuniformni}. U fokusu rada su takodje i klasični Remzijevi brojevi, tj. gledamo Remzijeve brojeve samo za potpune hipergrafove. U slučaju da posmatramo nepotpune grafove, uvek možemo definisati sve neprisutne grane nekom dodatnom bojom, a kako ćemo pokazati u kasnijem dokazu, Remzijeva teorema važi i za hipergrafove sa bilo kojim proizvoljnim konačnim brojem broja. Takodje postoji i poseban deo Remzijeve teorije koji se bavi $K_n - e$ grafovima \cite{pregled}, ali ta oblast je izvan opsega ovog rada.\\
+	Takodje zarad lakšeg razumevanja same oblasti, pomoću veze između grana i čvorova možemo koristiti činjenicu naša je naša potraga Remzijevih brojeva za bojenja grana zapravo eklivalentna sa potargom za grupom čvorova koji indukuju potpune monohromatske hipergrafove. Ova abstrakcija je posebno korisna za rad sa hipergrafovima gde je intuicija vezana za pojama grana mnogo slabija u odnosu na obične grafove
 	\subsection{Dokaz Remzijeve teoreme za hipergrafove}
 	U ovom poglavlju dokazujemo Remzijevu teoriju %preformulisati 
 	za hipergraf $ G_{k}(V, E)$ gde je V skup čvoreva, a E je skup skupova k-tog stepena čiji su elementi čvorovi iz skupa V.
@@ -185,7 +189,7 @@
 	To nam omogućuje da poznajući samo jedan remzijev broj odmah znatno sužimo polje pretrage drugi remzijevih brojeva.
 	\subsection{Remzijeva teorija nad stablima}
 	izbaciti?
-	\subsection{Remzijeva teorija nad neuniformnim hipergrafovima}
+	\subsection{Remzijeva teorija nad neuniformnim hipergrafovima}\label{neuniformni}
 	\subsubsection{Problemi}
 	Kako su i sama polja grafova i Remzijeve teorije poprilično mlada, tako su mlada i izučavanja Remzijeve teorije nad hipergrafovima. A istraživanja nad ne unifomrnim hipergrafovima su još uvek pokrivena u plaštu tame, i ostaju manje više neistražena. \\
 	Jedan od razloga manjka interesovanje je samo pitanje validnosti remzijeve teorije nad neunifomnim hipergrafovima %citiraj email lika
