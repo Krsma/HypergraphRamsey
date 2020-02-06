@@ -57,8 +57,31 @@
 	\section{Uvod}
 	Ubaciti Polićev tekst
 	FOrmulacija Remzijeve teorije za hipergrafove je veoma slična onoj za obične grafove (sama posledica toga da obične grafove možemo posmatati kao hipergrafove red 2), tako da se i većina pojmova koji su poznati iz teorije grafova mogu koristiti i u istraživanju nad hipergrafovima.
+	\pagebreak
+	\section{Notacije i osnovne defincije}
+	Sa obzirm da je ovo polje matematike dosta mlado, ni sama notacija nije ustaljena tako da se može primetiti velika razlika u zapisu izmedju različitih radova. Zarad izbegavanja greški i zabune, u ovom poglavlju ćemo prestaviti i definisati pojmove i notaciju na koje ćemo se oslanjati u ovom radu.
+	\newline
+	\begin{description}
+		\item \textbf{Grafovi i hipergrafovi}\\
+		Prosti graf definišemo kao uređeni par $G(V,E)$ gde je $V$ konačan skup čvorova a skup grana $E\subseteq[V]^2$. \\
+		Hipergraf predstavlja proširenje pojma grafa gde kao elemente skupa $E$ dozvoljavamo skupove sa više od dva elementa, čiji su elementi ponovo elementi skupa $V$.\\ U zavisnosti da lli posmatramo uniformne ili neunifomrne hipergrafove, kardinalnosti elemenata skupa $E$ može biti neko proizvoljno konačno $k$ (u slučaju $k=2$ radimo sa prostim grafovima) ili da su kardinalnosti elemenata $E$ izmedju 2 i nekog proizvoljnog konačnog $k$. Uniformne hipergrafove reda $k$ ćemo zapisivati kao $G(V, E)^k$ zarad lakšeg zapisa. \\
+		Elemente skupa $E$ možemo definisati i preko operacije indukovanja gde povezujemo elemente skupa $V$ sa elementima skupa $E$. Kažemo da neki čvorovi $v_1, v_2 \dots v_i$ indukuju neku granu ako postoji neka grana $e$ iz skupa $E$ koja ih jedinstveno i potpuno sadrži. \\%preformulisati možda
+		Zarad elegantnije notacije i lakšeg razumevanja pojavljivaće se zapis $V=[\underline{n}]$ koji predstavlja skup čvorova $V$ koji sadrži $n$ čvorova jedinstveno obeleženih sa vrednostima izemđu 1 i $n$. Takodje ćemo definisati skup $E$ preko broja $n$, i to notacijom $[\underline{n}]^k$ gde posmatramo grane reda $k$ nad čvorovima definisanim na prethodni način.
+		\\
+		Pošto ćemo se u ovom radu fokusirati na klasične Remzijevu teoriju, grafovi nad kojima ćemo raditi su potpuni (više diskusije u tome u \ref{psotavka}). Pošto su grafovi potpuni, veza izmedju čvorova i grana postaje još tesnija tako da se u radi često ti pojmovi koristiti skoro eklivalentno. \\
+		\item \textbf{Bojenja} \\
+		Postupak bojenja je osnovan za Remzijevu teoriju pošto nam omogućava diskretne podele struktura koje posmatramo. Definišimo neko bojenje na sledeći način. \\
+		Neko bojenje $\chi$ je transformacija koja skup $E$ nekog Grafa $G(V,E)^k$ preslikava u elemente nekog skupa $B$.
+		\[ 
+			\chi : E \rightarrow B
+		 \] 
+		 Uzavisnosti naših potreba i postupka često ćemo menjati priakz ova dva elementa , poput zapisa skupa grana preko čvoreva, dok ćemo za pojam boja koristiti najčešće ili boje (gde ponovo viđamo notaciju $\underline{n}$ gde $n \in N$, i to predstavlja skup boja indeksa od 1 do $n$) ili kao nkei definsiani skup vrednosti. %neće da radi jebeno govno za prirodne brojeve
+		
+	\end{description}
+	%graf1, cvorovi1, grane1, hipergrafovi1, hiper grane1, bojenje, indukovanje, zapisi strelice, zapisi remzijevog broja, zapis boja kao parove, zapis remzijevog broja kao minimalnog,
+	\pagebreak
 	\section{Postavka i dokaz Remzijeve teorije za hipergrafovima}
-	\subsection{Postavka problema}
+	\subsection{Postavka problema}\label{psotavka}
 	Notaciju za Remzijeve brojeve, bojenja i drugu notaciju kojom ćemo se baviti u ovom poglavlju možemo gledati iz nekolik ugolova. Iako se sama operacija bojenja vrši nad granama, možemo napraviti nekoliko apstrakcija zarad lakšeg razumevanja.\\
 	Kao prvo možemo omdah uočiti da se bavimo isključivo uniformnim i potpunim hipergrafovima. Remzijeva teorija nad neuuniformnim hipergrafovima predstavlja poseban problem, koji je još uvek minimalno istražen i za koji još uvek nismo sigurni da li uopšte važi. O ovome ćemo diskutovati u kasnijem poglavlju \ref{neuniformni}. U fokusu rada su takodje i klasični Remzijevi brojevi, tj. gledamo Remzijeve brojeve samo za potpune hipergrafove. U slučaju da posmatramo nepotpune grafove, uvek možemo definisati sve neprisutne grane nekom dodatnom bojom, a kako ćemo pokazati u kasnijem dokazu, Remzijeva teorema važi i za hipergrafove sa bilo kojim proizvoljnim konačnim brojem broja. Takodje postoji i poseban deo Remzijeve teorije koji se bavi $K_n - e$ grafovima \cite{pregled}, ali ta oblast je izvan opsega ovog rada.\\
 	Takodje zarad lakšeg razumevanja same oblasti, pomoću veze između grana i čvorova možemo koristiti činjenicu naša je naša potraga Remzijevih brojeva za bojenja grana zapravo eklivalentna sa potargom za grupom čvorova koji indukuju potpune monohromatske hipergrafove. Ova abstrakcija je posebno korisna za rad sa hipergrafovima gde je intuicija vezana za pojama grana mnogo slabija u odnosu na obične grafove
