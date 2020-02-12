@@ -10,7 +10,7 @@
 \usepackage[backend=biber]{biblatex}
 \addbibresource{citiranja.bib}
 
-\newcommand{\autor}{ \centering Nenad Vuletić, Vladimir Krsmanović, Marko Polić}
+\newcommand{\autor}{ \flushleft\mbox{Nenad Vuletić, Vladimir Krsmanović, Marko Polić} }
 \newcommand{\naslov}{Remzijeva teorija na hipergrafovima}
 \newcommand{\datum}{Novi Sad, 2020}
 \newcommand{\mentor}{dr. Maja Pech}
@@ -30,16 +30,15 @@
 		
 		\vspace{4ex}
 		Seminarski rad
-		
-		\vspace{12ex}
+		\vfill	
 		\parbox[b]{\textwidth}{{\Large {\bf \hspace{1cm}\autor}}}
 		\vspace{10ex}
 		
 		{\Large Mentor:}
 		
 		{\Large  \textbf{\mentor}}
-		
-		\vfill
+		\vspace{5ex}
+	
 		
 		\datum
 		
@@ -49,7 +48,7 @@
 	\vfill
 	\begin{center}
 		\textbf{Abstrakt}\\
-		U ovom radu ćemo napraviti pregled Remzijeve teorije nad hipergrafovima, predstavićemo dokaze i primene ove matematičke teorije.
+		Cilj ovog rada je istrazivanje i prikupljanje informacija, teorema i dokaza o primeni Remzijeve teorije na hipergrafove. Napisane su postavke i dokazi Remzijeve teoreme za hipergraf, u bihromatskom i polihromatskom bojenju. Objašnjen je nacin dobijanja jedinog poznatog Remzijevog broja za hipergrafove, kao i važnost Remzijevih brojeva stepena 3. Takođe je prodiskutovana i Remzijeva teorija nad neuniformnim hipergrafovima.
 		\thispagestyle{empty}
 	\end{center}
 	\vspace{15ex}
@@ -148,7 +147,7 @@
 					[ T ]^{k} \subseteq \chi^\prime (1)
 				\end{equation}
 			\item  \textbf{Ne sadrže a} \\
-				Onda sve k-elementne hipergrane$T_1$ su već boje 1, time direktno dobijamo
+				Onda sve k-elementne hipergrane $T_1$ su već boje 1, time direktno dobijamo
 				\begin{equation}
 					[ T ]^k \subseteq \chi^\prime (1)
 				\end{equation}
@@ -157,7 +156,7 @@
 		{\large Q.E.D.}
 	\end{description}
 	\subsection{Dokaz Remzijeve teoreme za polihromatske hipergrafove}
-	Pokažimo sada Remzijevu teoremu za hipergrafove gde imamo neki konačan, r broj boja. Treba da pokažemo da važi 
+	Pokažimo sada Remzijevu teoremu za hipergrafove gde imamo neki konačan, $r$ broj boja. Treba da pokažemo da važi 
 	\begin{equation}
 		n \rightarrow (l_1, l_2 \dots l_r)^k
 	\end{equation}
@@ -197,14 +196,14 @@
 	Pošto su i polja grafova i Remzijeve teorije oba poprilično mlada, posebno u poređenju sa ustaljenijim matematičkim disciplinama, još uvek je slabo istražena. I to posebno u poljima hipergrafova.\\ Većina radova na ovom polju se bavi primarno sa uniformnim hipergrafovima, upravo zbog kompleksnosti rada se neunifomrnim hipergrafovima.\\ Kao posledica težine izučavajna Remzijeve teorije, matematičari su pribegli generalizacijama problema i kompjuterskim simulacijama. I ono što možemo primetiti prilikom pregleda radova nad ovim poljem je okretanje matematičara ka uopštenjima i sličnim problemima, kao način da dobijemo bolji uvod u Remzijevu teoriju nad hipergrafovima.
 	\subsection{Poznati Remzijev broj za hipergrafove}%opraviti citiranja%
 	Trenutno jedini poznati Remzijev broj za hipergrafove (u klasičnom smislu, posmatrajući potpune hipergrafove)\cite{pregled}%proveriti i citirati
-	 je dobijen uz pomoć računara. Brendan D. McKay i Stanislaw P. Radziszowski, su 1991. godine objavili svoj rad \textcite{HGremzibroj} gde su odredili broj tačaka potreban da se bihromatskim bojenjem trouglova nad skupom od 13 tačaka mora uvek mora pronaći monohromatski četvorougao.%preformulisati
+	 je dobijen uz pomoć računara. Brendan D. McKay i Stanislaw P. Radziszowski, su 1991. godine objavili svoj rad \textcite{HGremzibroj} gde su odredili broj tačaka potreban da se bihromatskim bojenjem trouglova nad skupom tačaka uvek mora pronaći monohromatski četvorougao.%preformulisati
 	\begin{equation}
 		R(4, 4; 3) = 13
 	\end{equation}
 	Na osnovu već poznatih granica ($R(4, 4; 3) \leq 15$ Giraud))%citiraj Girauda, ima link u HGrezmi radu, 
 	, kao i veze između Tur\'{a}novih sistema\footnote{Donekle slični Remzijevim brojevima, Tur\'{a}novi brojevi predstavljaju minimalni broj grana nekog grafa tako da je ispunjen uslov da onda za bilo koji podskup čvoreva tog hipergrafa uvek sadrži bar jendu granu. Ali pošto je to van opsega ovog rada, nećemo ulaziti dublje u teoriju Tur\'{a}novih sistema } i Remzijevih brojeva, McKay i Radziszovski su uspeli prvo da spuste granicu na $R(4, 4; 3) \leq 13$, a onda i da pomoću kompjutera pronađu taj graf, kroz proces u kojem su generisali preko 200,000 grafova. Ovaj problem možemo lako posmatrati kroz prizmu hipergrafova (slično kao i kod Erd\"{o}s-Szekeres problema), gde tražimo koliko je potrebno čvorova za 3-uniformni hipergraf tako da on uvek ima ili potpun podhipergraf indukovan sa 4 čvora, ili 4  nezavisna čvora. %citirati!! citirati i preformulisati footnote kod Tur\'{a}novih bsistema, i citirati !!! potencijalno ubaciti sliku tog grafa
-	\subsubsection{Važnost Remzijevih brojeva za hipergrafove stepena 3}
-	U polju Remzijeve teorije poseban značaj nose upravo Remzijevi brojevi za uniformne grafove reda 3. Značaj tih brojeva je posledica "stepenaste" leme iz rada Erd\"{o}s i Hajnala \cite{posledice3remzi} %naci bolji citation 
+	\subsection{Važnost Remzijevih brojeva za hipergrafove stepena 3}
+	U polju Remzijeve teorije poseban značaj nose upravo Remzijevi brojevi za uniformne grafove reda 3. Značaj tih brojeva je posledica ‚‚stepenaste" leme iz rada Erd\"{o}s i Hajnala \cite{posledice3remzi} %naci bolji citation 
 	 u kojoj je pokazana direktna veza između donjih granica grafa uniformnosti k i k +1 (važi za svako k veće jednako od 3). Posledica tvrdi da za svako $k \geq 3; n \not\rightarrow (l)^k$ onda važi. \cite{matoraknjigajedvanadjena}
 	\begin{equation}
 		2^n \not\rightarrow (2l + k - 4)^{k-1}
@@ -214,7 +213,7 @@
 	
 	Kako su i sama polja grafova i Remzijeve teorije poprilično mlada, tako su mlada i izučavanja Remzijeve teorije nad hipergrafovima. \\
 	Jedan od problema je  i samo pitanje validnosti Remzijeve teorije nad neunifomnim hipergrafovima.\\
-	Posmatrajmo na primer neki neuniformni hipergraf $G$ reda $n$ koji sadrži hipergrane kardinalnosti od 1 do $n$. Posmatrajmo onda dva podskupa njegovih grana, gde je prvi podskup sačinjen od  hipergrana reda $s$, a drugi podskup od hipergrana reda $t$ (gde uzimamo da ne važi $s=t$). Uočavamo problem da čim je neka hipergrana u $t$ obojena drugačije od neke grane iz $s$ nad zajedničkim čvorovima, odmah imamo problem zbog gubljenja mogućnosti potpunih monohromatsklih hipergrafova nad tim čvorovima.  \footnote{Ovaj problem nam je predstavljen od strane Mark Buddena kroz ličnu komunikaciju} %citiraj email lika
+	Posmatrajmo na primer neki neuniformni hipergraf $G$ reda $n$ koji sadrži hipergrane kardinalnosti od 1 do $n$. Posmatrajmo onda dva podskupa njegovih grana, gde je prvi podskup sačinjen od  hipergrana reda $s$, a drugi podskup od hipergrana reda $t$ (gde uzimamo da ne važi $s=t$). Uočavamo problem da čim je neka hipergrana u $t$ obojena drugačije od neke grane iz $s$ nad zajedničkim čvorovima, odmah imamo problem zbog gubljenja mogućnosti potpunih monohromatsklih hipergrafova nad tim čvorovima (ovaj problem nam je predstavljen od strane Mark Buddena, University of West Virginia kroz ličnu komunikaciju).  %citiraj email lika
 	\\Ovo polje istraživanja je još uvek mlado, tako da se dosta matematičara okrenulo uopštenju Remzijeve teorije za problem nad neuniformnim hipergrafovima. U tim radovima, ne posmatraju se stroge monohromatske podele, već se gledaju podele gde podhipergrafovi koriste najvise $k$ boja, ili neke drugačije podele, poput Gallai-Remzi bojenja koja posmatraju bojenja stranica n-touglova unutar hipergrafa (Gallai-Remzi bojenja se izučavaju i za uniformne hipergrafove).
 	%Potencijalno resenje, promena defincije potpunosti - distanca uvek 1? Za buduce radove
 	\pagebreak
