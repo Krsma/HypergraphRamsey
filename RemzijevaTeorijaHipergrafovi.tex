@@ -6,6 +6,7 @@
 \usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{interval}
+\usepackage[serbian]{babel}
 \usepackage[backend=biber]{biblatex}
 \addbibresource{citiranja.bib}
 
@@ -51,23 +52,23 @@
 		U ovom radu ćemo napraviti pregled Remzijeve teorije nad hipergrafovima, predstavićemo dokaze i primene ove matematičke teorije.
 		\thispagestyle{empty}
 	\end{center}
-	\pagebreak
+	\vspace{15ex}
 	\tableofcontents
 	\newpage
 	\section{Uvod}
-	Remzijeva teorija je u svojoj suštini neprestana potraga za postojanjem reda unutar haosa velikih sistema. U svojim postpucima deljenja sistema i potraga pravila, brzo je našla partnera u teoriji grafova. Skupovi diskretnih elemenata i uredjenje oko strogih pravila relacija, grafovi su se ukazali kao fantastičan način da Remzijeva teorija , kao novo polje izučavanja, poveže sa ostalim poljima matematike. Kroz ovaj rad ćemo posmatrati kako se Remzijeva teorija povezala sa proširenjem grafova na hipergrafove, i sa raznim operacijama nad tim grafovima, poput bojenja grana.
+	Remzijeva teorija je u svojoj suštini neprestana potraga za postojanjem reda unutar haosa velikih sistema. U svojim postpucima deljenja sistema i potraga pravila, brzo je našla partnera u teoriji grafova. Skupovi diskretnih elemenata i uređenje oko strogih pravila relacija, grafovi su se ukazali kao fantastičan način da Remzijeva teorija , kao novo polje izučavanja, poveže sa ostalim poljima matematike. Kroz ovaj rad ćemo posmatrati kako se Remzijeva teorija povezala sa proširenjem grafova na hipergrafove, i sa raznim operacijama nad tim grafovima, poput bojenja grana.
 
 	\section{Notacije i osnovne defincije}
-	Sa obzirom da je ovo polje matematike dosta mlado, ni sama notacija nije ustaljena tako da se može primetiti velika razlika u zapisu izmedju različitih radova. Zarad izbegavanja grešaka i zabune, u ovom poglavlju ćemo predstaviti i definisati pojmove i notaciju na koje ćemo se oslanjati u ovom radu.
+	Sa obzirom da je ovo polje matematike dosta mlado, ni sama notacija nije ustaljena tako da se može primetiti velika razlika u zapisu između različitih radova. Zarad izbegavanja grešaka i zabune, u ovom poglavlju ćemo predstaviti i definisati pojmove i notaciju na koje ćemo se oslanjati u ovom radu.
 	\newline
 	\begin{description}
 		\item \textbf{Grafovi i hipergrafovi}\\
 		Prosti graf definišemo kao uređeni par $G(V,E)$ gde je $V$ konačan skup čvorova a skup grana $E\subseteq[V]^2$. \\
-		Hipergraf predstavlja proširenje pojma grafa gde kao elemente skupa $E$ dozvoljavamo skupove sa više od dva elementa, čiji su elementi ponovo elementi skupa $V$.\\ U zavisnosti da li posmatramo uniformne ili neuniformne hipergrafove, kardinalnosti elemenata skupa $E$ može biti neko proizvoljno konačno $k$ (u slučaju $k=2$ radimo sa prostim grafovima) ili da su kardinalnosti elemenata $E$ izmedju 2 i nekog proizvoljnog konačnog $k$. Uniformne hipergrafove reda $k$ ćemo zapisivati kao $G(V, E)^k$ zarad lakšeg zapisa. \\
+		Hipergraf predstavlja proširenje pojma grafa gde kao elemente skupa $E$ dozvoljavamo skupove sa više od dva elementa, čiji su elementi ponovo elementi skupa $V$.\\ U zavisnosti da li posmatramo uniformne ili neuniformne hipergrafove, kardinalnosti elemenata skupa $E$ može biti neko proizvoljno konačno $k$ (u slučaju $k=2$ radimo sa prostim grafovima) ili da su kardinalnosti elemenata $E$ između 2 i nekog proizvoljnog konačnog $k$. Uniformne hipergrafove reda $k$ ćemo zapisivati kao $G(V, E)^k$ zarad lakšeg zapisa. \\
 		Elemente skupa $E$ možemo definisati i preko operacije indukovanja gde povezujemo elemente skupa $V$ sa elementima skupa $E$. Kažemo da neki čvorovi $v_1, v_2 \dots v_i$ indukuju neku granu ako postoji neka grana $e$ iz skupa $E$ koja ih jedinstveno i potpuno sadrži. \\%preformulisati možda
-		Zarad elegantnije notacije i lakšeg razumevanja pojavljivaće se zapis $V=[\underline{n}]$ koji predstavlja skup čvorova $V$ koji sadrži $n$ čvorova jedinstveno obeleženih sa vrednostima izemđu 1 i $n$. Takodje ćemo definisati skup $E$ preko broja $n$, i to notacijom $[\underline{n}]^k$ gde posmatramo grane reda $k$ nad čvorovima definisanim na prethodni način.
+		Zarad elegantnije notacije i lakšeg razumevanja pojavljivaće se zapis $V=[\underline{n}]$ koji predstavlja skup čvorova $V$ koji sadrži $n$ čvorova jedinstveno obeleženih sa vrednostima izemđu 1 i $n$. Takođe ćemo definisati skup $E$ preko broja $n$, i to notacijom $[\underline{n}]^k$ gde posmatramo grane reda $k$ nad čvorovima definisanim na prethodni način.
 		\\
-		Pošto ćemo se u ovom radu fokusirati na klasičnu Remzijevu teoriju, grafovi nad kojima ćemo raditi su potpuni (više diskusije  tome u \ref{psotavka}). Pošto su grafovi potpuni, veza izmedju čvorova i grana postaje još tesnija tako da će se u ovom radu često ti pojmovi koristiti skoro eklivalentno. \\
+		Pošto ćemo se u ovom radu fokusirati na klasičnu Remzijevu teoriju, grafovi nad kojima ćemo raditi su potpuni (više diskusije  tome u \ref{psotavka}). Pošto su grafovi potpuni, veza između čvorova i grana postaje još tesnija tako da će se u ovom radu često ti pojmovi koristiti skoro eklivalentno. \\
 		\item \textbf{Bojenja} \\
 		Postupak bojenja je osnovan za Remzijevu teoriju pošto nam omogućava diskretne podele struktura koje posmatramo. Definišimo neko bojenje na sledeći način: \\
 		Neko bojenje $\chi$ je transformacija koja skup $E$ nekog Grafa $G(V,E)^k$ preslikava u elemente nekog skupa $B$.
@@ -83,8 +84,8 @@
 	\section{Postavka i dokaz Remzijeve teorije za hipergrafovima}
 	\subsection{Postavka problema}\label{psotavka}
 	Notaciju za Remzijeve brojeve, bojenja i drugu notaciju kojom ćemo se baviti u ovom poglavlju možemo gledati iz nekolik uglova. Iako se sama operacija bojenja vrši nad granama, možemo napraviti nekoliko apstrakcija zarad lakšeg razumevanja.\\
-	Kao prvo možemo odmah uočiti da se bavimo isključivo uniformnim i potpunim hipergrafovima. Remzijeva teorija nad neuniformnim hipergrafovima predstavlja poseban problem, koji je još uvek minimalno istražen i za koji još uvek nismo sigurni da li uopšte važi. O ovome ćemo diskutovati u kasnijem poglavlju \ref{neuniformni}. U fokusu rada su takodje i klasični Remzijevi brojevi, tj. gledamo Remzijeve brojeve samo za potpune hipergrafove. U slučaju da posmatramo nepotpune grafove, uvek možemo definisati sve neprisutne grane nekom dodatnom bojom, a kako ćemo pokazati u kasnijem dokazu, Remzijeva teorema važi i za hipergrafove sa bilo kojim proizvoljnim konačnim brojem boja. Takodje postoji i poseban deo Remzijeve teorije koji se bavi $K_n - e$ grafovima \cite{pregled}, ali ta oblast je izvan opsega ovog rada.\\
-	Takodje zarad lakšeg razumevanja same oblasti, pomoću veze između grana i čvorova možemo koristiti činjenicu da je naša potraga Remzijevih brojeva za bojenja grana zapravo eklivalentna sa potragom za grupom čvorova koji indukuju potpune monohromatske hipergrafove. Ova apstrakcija je posebno korisna za rad sa hipergrafovima gde je intuicija vezana za pojam grana mnogo slabija u odnosu na obične grafove
+	Kao prvo možemo odmah uočiti da se bavimo isključivo uniformnim i potpunim hipergrafovima. Remzijeva teorija nad neuniformnim hipergrafovima predstavlja poseban problem, koji je još uvek minimalno istražen i za koji još uvek nismo sigurni da li uopšte važi. O ovome ćemo diskutovati u kasnijem poglavlju \ref{neuniformni}. U fokusu rada su takođe i klasični Remzijevi brojevi, tj. gledamo Remzijeve brojeve samo za potpune hipergrafove. U slučaju da posmatramo nepotpune grafove, uvek možemo definisati sve neprisutne grane nekom dodatnom bojom, a kako ćemo pokazati u kasnijem dokazu, Remzijeva teorema važi i za hipergrafove sa bilo kojim proizvoljnim konačnim brojem boja. Takođe postoji i poseban deo Remzijeve teorije koji se bavi $K_n - e$ grafovima \cite{pregled}, ali ta oblast je izvan opsega ovog rada.\\
+	Takođe zarad lakšeg razumevanja same oblasti, pomoću veze između grana i čvorova možemo koristiti činjenicu da je naša potraga Remzijevih brojeva za bojenja grana zapravo eklivalentna sa potragom za grupom čvorova koji indukuju potpune monohromatske hipergrafove. Ova apstrakcija je posebno korisna za rad sa hipergrafovima gde je intuicija vezana za pojam grana mnogo slabija u odnosu na obične grafove
 	\subsection{Dokaz Remzijeve teoreme za hipergrafove}
 	U ovom poglavlju dokazujemo Remzijevu teoriju %preformulisati 
 	za hipergraf $ G_{k}(V, E)$ gde je V skup čvoreva, a E je skup skupova k-tog stepena čiji su elementi čvorovi iz skupa V (tj. hipergrane reda $k$).
@@ -114,16 +115,15 @@
 		\end{equation} \\
 		Bez umanjenja opštosti onda možemo uočiti proizvoljan čvor $a$ unutar skupa čvorova hipergrafa $P$, i onda možemo uočiti hipergraf $P^\prime$ čiji je skup čvorova $\underline{n} \textbackslash \{ a \}$, i njegova kardinalnost je stepena $m_3$. Po posledici \ref{m3} znamo da postoji $k-1$ uniformni hipergraf sa $m_3$ čvorova. %preformulisati
 		\\
-		Na njemu onda definišemo bojenje $\overline{\chi}$ takvo da boji hipergrane stepena $k-1$ hipergrafa $P^\prime \textbackslash \{ a \}$ u istu boju kao što ih boji  $\chi$ u $P^\prime$ dok je imalo $a$.
+		Na njemu onda definišemo bojenje $\overline{\chi}$ takvo da boji hipergrane stepena $k-1$ hipergrafa $P^\prime $ u istu boju kao što ih boji  $\chi$ u $P$ dok je imalo $a$.
 		\begin{equation}
 			\overline{\chi} : [ \underline{n} \textbackslash \{a\} ]^{k-1}  \rightarrow \underline{2}
 		\end{equation} %preforumilasti
-		Posmatramo i bojenje $M$ koje nam pokazuje kako bojenje $\overline{\chi}$ boji naš graf u odnosu sa bojenjem $\chi$.
 		\begin{equation}
 			\overline{\chi}:M \rightarrow \chi (M \cup \{a\})
 		\end{equation}
 		\\
-		Iz posledice \ref{m3} takodje sledi da postoji $m_1$ čvorova gde sve k-1 elementne hipergrane nad njima su obojene bojom 1 (po bojenju $\overline{\chi}$)
+		Iz posledice \ref{m3} takođe sledi da postoji $m_1$ čvorova gde sve k-1 elementne hipergrane nad njima su obojene bojom 1 (po bojenju $\overline{\chi}$)
 		Taj podskup čvorova nazivamo $K_1$, i njegova kardinalnost je  $m_1$. \footnote{Postupak je analogan za grane obojene bojom 2, gde nastaje podskup $K_2$.}. \\
 		Posmatrajmo sada ponovo bojenje $\chi$. Konstruišimo sada restrikciju $\chi$ nad  skupom čvoreva $K_1$.
 		\begin{equation}
@@ -137,7 +137,7 @@
 			\item \textbf{Sadrže a}\\
 				U tom slučaju se onda sve te grane boje isto kao što ih boji $\overline{\chi}$ kada ne bi imale čvor $a$. Pošto $\overline{\chi}$ boji sve k-1 elementne hipergrane $K_1$ u boju 1 . A pošto je $T_1$ podskup, onda dobijamo da 
 				\begin{equation}
-					[ T_1 ]^{k-1} \subseteq \chi^\prime (1)
+					[ T_1 ]^{k-1} \subseteq \overline{\chi}^\prime (1)
 				\end{equation}
 				Potom možemo uključiti čvor $a$, i bojenje $\chi$ će ih isto bojiti u boju 1.
 				\begin{equation}
@@ -145,7 +145,7 @@
 				\end{equation}
 				Odatle dolazimo do zaključka 
 				\begin{equation}
-					[ T ]^{1} \subseteq \chi^\prime (1)
+					[ T ]^{k} \subseteq \chi^\prime (1)
 				\end{equation}
 			\item  \textbf{Ne sadrže a} \\
 				Onda sve k-elementne hipergrane$T_1$ su već boje 1, time direktno dobijamo
@@ -161,12 +161,12 @@
 	\begin{equation}
 		n \rightarrow (l_1, l_2 \dots l_r)^k
 	\end{equation}
-	Da bi ovo dokazali, koristićemo postupak matematičke indukcije, oslanjajući se na prethodno pokazano tvrdjenje \ref{OsnovnaRemzijeva} koja će nam predstavljati bazu naše indukcije.
+	Da bi ovo dokazali, koristićemo postupak matematičke indukcije, oslanjajući se na prethodno pokazano tvrđenje \ref{OsnovnaRemzijeva} koja će nam predstavljati bazu naše indukcije.
 	\begin{description}
 		\item \textbf{Indukcijska baza} \\
-		Tvrdjenje \ref{OsnovnaRemzijeva} nam predstavlja indukcijsku pozu, pokazujući da naša teorema važi za slučaj r = 2.\\
+		Tvrđenje \ref{OsnovnaRemzijeva} nam predstavlja indukcijsku pozu, pokazujući da naša teorema važi za slučaj r = 2.\\
 		\item \textbf{Indukcijska hipoteza}\\
-		Prateći postupak matematičke indukcije, pretpostavićemo da naše tvrdjenje važi za neko proizvoljno r.\\
+		Prateći postupak matematičke indukcije, pretpostavićemo da naše tvrđenje važi za neko proizvoljno r.\\
 		\item \textbf{Indukcijski korak}\\
 		Pokažimo sada da će naša teorema važiti za r +1 boju.
 		Pokazujemo da postoji konačan broj čvorova n za koji će svako bojenje nad tim hipergrafom bojiti boju $i$ nad $l_i$ grana. %preforumilasti formalno
@@ -174,7 +174,7 @@
 		 n \rightarrow (l_1, l_2 \dots l_r, l_{r+1})^k
 		\end{equation}
 		Posmatrajmo prvo bojenje iz \textbf{Indukcijske hipoteze}, gde znamo da postoji broj čvorova dovoljan za bojenje hipergrafa sa nekih r boja. Uzmimo da je taj dovoljan broj neko $m$. Postojanje konačne vrednosti ovog broja znamo kao posledicu naše pretpostavke iz \textbf{Indukcijske hipoteze}\\
-		Konstruišimo sada novu brojčanu vrednost n, koja predstavlja broj čvorova dovoljan za bihromatsko bojenje nad nekim hipergrafom tako da ono ili boji $m$ (broj dobijen iz prethodnog koraka) hipergrana nekom bojom A ili da boji $l_{r+1}$ hipergrana bojom r+1. Postojanje konačne vrednosti ovog broja dobijamo iz \textbf{Inudkcijske baze}. 
+		Konstruišimo sada novu brojčanu vrednost n, koja predstavlja broj čvorova dovoljan za bihromatsko bojenje nad nekim hipergrafom tako da ono ili boji $m$ (broj dobijen iz prethodnog koraka) hipergrana nekom bojom A ili da boji $l_{r+1}$ hipergrana bojom r+1. Postojanje konačne vrednosti ovog broja dobijamo iz \textbf{Indukcijske baze}. 
 		\\
 		Konstruišimo sada novi graf G koji će imati n čvorova i nad kojim ćemo posmatrati 2 bojenja. Pošto pokazujemo Indukcijski korak naše hipoteze , posmatraćemo bojenje $\chi$ i da bi pokazali konačnost indukcijskog koraka (\ref{Ikorak}) mi zapravo treba da poažemo egzistenciju ovakvog bojenja.
 		\begin{equation}\label{pokazujemo}
@@ -194,7 +194,7 @@
 		Q.E.D.
  	\end{description}
 	\section{Pregled stanja Remzijeve teorije nad hipergrafovima}
-	Pošto su i polja grafova i Remzijeve teorije oba poprilično mlada, posebno u poredjenju sa ustaljenijim matematičkim disciplinama, još uvek je slabo istražena. I to posebno u poljima hipergrafova.\\ Većina radova na ovom polju se bavi primarno sa uniformnim hipergrafovima, upravo zbog kompleksnosti rada se neunifomrnim hipergrafovima.\\ Kao posledica težine izučavajna Remzijeve teorije, matematičari su pribegli generalizacijama problema i kompjuterskim simulacijama. I ono što možemo primetiti prilikom pregleda radova nad ovim poljem je okretanje matematičara ka uopštenjima i sličnim problemima, kao način da dobijemo bolji uvod u Remzijevu teoriju nad hipergrafovima.
+	Pošto su i polja grafova i Remzijeve teorije oba poprilično mlada, posebno u poređenju sa ustaljenijim matematičkim disciplinama, još uvek je slabo istražena. I to posebno u poljima hipergrafova.\\ Većina radova na ovom polju se bavi primarno sa uniformnim hipergrafovima, upravo zbog kompleksnosti rada se neunifomrnim hipergrafovima.\\ Kao posledica težine izučavajna Remzijeve teorije, matematičari su pribegli generalizacijama problema i kompjuterskim simulacijama. I ono što možemo primetiti prilikom pregleda radova nad ovim poljem je okretanje matematičara ka uopštenjima i sličnim problemima, kao način da dobijemo bolji uvod u Remzijevu teoriju nad hipergrafovima.
 	\subsection{Poznati Remzijev broj za hipergrafove}%opraviti citiranja%
 	Trenutno jedini poznati Remzijev broj za hipergrafove (u klasičnom smislu, posmatrajući potpune hipergrafove)\cite{pregled}%proveriti i citirati
 	 je dobijen uz pomoć računara. Brendan D. McKay i Stanislaw P. Radziszowski, su 1991. godine objavili svoj rad \textcite{HGremzibroj} gde su odredili broj tačaka potreban da se bihromatskim bojenjem trouglova nad skupom od 13 tačaka mora uvek mora pronaći monohromatski četvorougao.%preformulisati
@@ -202,10 +202,10 @@
 		R(4, 4; 3) = 13
 	\end{equation}
 	Na osnovu već poznatih granica ($R(4, 4; 3) \leq 15$ Giraud))%citiraj Girauda, ima link u HGrezmi radu, 
-	, kao i veze izmedju Tur\'{a}novih sistema\footnote{Donekle slični Remzijevim brojevima, Tur\'{a}novi brojevi predstavljaju minimalni broj grana nekog grafa tako da je ispunjen uslov da onda za bilo koji podskup čvoreva tog hipergrafa uvek sadrži bar jendu granu. Ali pošto je to van opsega ovog rada, nećemo ulaziti dublje u teoriju Tur\'{a}novih sistema } i Remzijevih brojeva, McKay i Radziszovski su uspeli prvo da spuste granicu na $R(4, 4; 3) \leq 13$, a onda i da pomoću kompjutera pronadju taj graf, kroz proces u kojem su generisali preko 200,000 grafova. Ovaj problem možemo lako posmatrati kroz prizmu hipergrafova (slično kao i kod Erd\"{o}s-Szekeres problema), gde tražimo koliko je potrebno čvorova za 3-uniformni hipergraf tako da on uvek ima ili potpun podhipergraf indukovan sa 4 čvora, ili 4  nezavisna čvora. %citirati!! citirati i preformulisati footnote kod Tur\'{a}novih bsistema, i citirati !!! potencijalno ubaciti sliku tog grafa
+	, kao i veze između Tur\'{a}novih sistema\footnote{Donekle slični Remzijevim brojevima, Tur\'{a}novi brojevi predstavljaju minimalni broj grana nekog grafa tako da je ispunjen uslov da onda za bilo koji podskup čvoreva tog hipergrafa uvek sadrži bar jendu granu. Ali pošto je to van opsega ovog rada, nećemo ulaziti dublje u teoriju Tur\'{a}novih sistema } i Remzijevih brojeva, McKay i Radziszovski su uspeli prvo da spuste granicu na $R(4, 4; 3) \leq 13$, a onda i da pomoću kompjutera pronađu taj graf, kroz proces u kojem su generisali preko 200,000 grafova. Ovaj problem možemo lako posmatrati kroz prizmu hipergrafova (slično kao i kod Erd\"{o}s-Szekeres problema), gde tražimo koliko je potrebno čvorova za 3-uniformni hipergraf tako da on uvek ima ili potpun podhipergraf indukovan sa 4 čvora, ili 4  nezavisna čvora. %citirati!! citirati i preformulisati footnote kod Tur\'{a}novih bsistema, i citirati !!! potencijalno ubaciti sliku tog grafa
 	\subsubsection{Važnost Remzijevih brojeva za hipergrafove stepena 3}
 	U polju Remzijeve teorije poseban značaj nose upravo Remzijevi brojevi za uniformne grafove reda 3. Značaj tih brojeva je posledica "stepenaste" leme iz rada Erd\"{o}s i Hajnala \cite{posledice3remzi} %naci bolji citation 
-	 u kojoj je pokazana direktna veza izmedju donjih granica grafa uniformnosti k i k +1 (važi za svako k veće jednako od 3). Posledica tvrdi da za svako $k \geq 3; n \not\rightarrow (l)^k$ onda važi. \cite{matoraknjigajedvanadjena}
+	 u kojoj je pokazana direktna veza između donjih granica grafa uniformnosti k i k +1 (važi za svako k veće jednako od 3). Posledica tvrdi da za svako $k \geq 3; n \not\rightarrow (l)^k$ onda važi. \cite{matoraknjigajedvanadjena}
 	\begin{equation}
 		2^n \not\rightarrow (2l + k - 4)^{k-1}
 	\end{equation}
